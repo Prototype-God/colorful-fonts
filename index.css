@@ -56,10 +56,15 @@ h2 span{
     position: absolute;
     margin-top: 10vw;
 }
-#container{
+#div01{
     position: absolute;
     left: 0px;
     top: 0px;
+}
+#div02{
+    position: absolute;
+    left: 0px;
+    top: 1.8em;
 }
 select {
     margin-bottom: 10px;
@@ -72,8 +77,13 @@ select {
     padding: 4px;
     border-radius: 9px;
   }
-form{
+.form1{
     position: absolute;
-    top: 20px;
     left: 0px;
+    top: 3.5em;
+}
+.form2{
+    position: absolute;
+    left: 0px;
+    top: 5.5em;
 }

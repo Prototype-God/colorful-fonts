@@ -8,19 +8,36 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div id="container">
-        <input type="text" placeholder = '输入你想要的文字'>
-    </div>
-    <form action="#">
-        <label style="color:white" >字体大小:</label>
-        <select name="languages" id="font_size">
-          <option value="big" >大号</option>
-          <option value="middle" selected = "selected">中号</option>
-          <option value="small">小号</option>
-        </select>
-        <button id="btn01"style="color:black">点我一下</button>
-  </form>
+  
+        <div id="div01">
+            <input type="text" placeholder = '输入文字' id="input01">
+            <button id="btn03"style="color:black">点击确认</button>
+        </div>
+        <div id="div02">
+            <input type="text" placeholder = '更改字体,默认雅黑'id='input02'>
+            <button id="btn04"style="color:black">点击确认</button>
+        </div>
+        <form action="#" class = 'form1'>
+            <label style="color:white" >字体大小:</label>
+            <select name="languages" id="font_size">
+            <option value="big" >大号</option>
+            <option value="middle" selected = "selected">中号</option>
+            <option value="small">小号</option>
+            </select>
+            <button id="btn01"style="color:black">点击确认</button>
+        </form>
+        <!-- 字体粗细 -->
+        <form action="#" class="form2">
+            <label style="color:white" >字体粗细:</label>
+            <select name="languages" id="font_weight">
+            <option value="thick" selected = "selected">加粗</option>
+            <option value="normal">正常</option>
+            
+            </select>
+            <button id="btn02"style="color:black">点击确认</button>
+        </form>
 
+    <!-- 中间展示 -->
     <h2 class="p1">
         <span id="s1" style="--i:1">左</span>
         <span style="--i:2">上</span>
@@ -39,6 +56,93 @@
         <span style="--i:15">)</span>
         <span style="--i:16">ψ</span>
     </h2>
+    <!-- <script>
+        window.onload = function(){
+        var span = document.getElementsByClassName('span');
+        // 01 改变字体大小
+        // 下拉框change事件
+        $("#font_size").on("change",function(event){
+        font_size = event.target.value
+        });
+        $("#font_weight").on("change",function(event){
+        font_weight = event.target.value
+        });
+        var btn01 = document.getElementById('btn01');
+        // var options=$("#font_size option:selected")
+        btn01.onclick = function(event){
+            // 阻止点击就发生页面刷新的默认行为
+            event.preventDefault();
+            if(font_size =='big'){
+                $('.p1').children('span').css('font-size','10vw').css('margin-top','-10vw')
+                $('.p2').children('span').css('font-size','10vw').css('margin-top','8vw')
+            };
+            if(font_size =='middle'){
+                $('.p1').children('span').css('font-size','4vw').css('margin-top','0vw')
+                $('.p2').children('span').css('font-size','4vw').css('margin-top','0vw')
+            };
+            if(font_size =='small'){
+                $('.p1').children('span').css('font-size','2vw').css('margin-top','0vw')
+                $('.p2').children('span').css('font-size','2vw').css('margin-top','-1vw')
+            }
+        };
+
+        // 02 改变字体粗细
+        var btn02 = document.getElementById('btn02');
+        btn02.onclick = function(event){
+            console.log($('.p1').children('span').css('font-family'))
+            event.preventDefault();
+            if(font_weight =='thick'){
+                $('.p1').children('span').css('font-weight','bold')
+                $('.p2').children('span').css('font-weight','bold')
+            };
+            if(font_weight =='normal'){
+                $('.p1').children('span').css('font-weight','normal')
+                $('.p2').children('span').css('font-weight','normal')
+            };
+        };
+
+
+
+        // 03 输入框输入
+        var btn03 = document.getElementById('btn03');
+        var p1 = document.getElementsByClassName("p1");
+        var p2 = document.getElementsByClassName("p2"); 
+        var span = document.getElementsByClassName('span');
+        btn03.onclick = function(event){
+            event = event||window.event
+            var input01 = document.getElementById('input01').value;
+            length = input01.length
+                $('.p1').empty();
+                $('.p2').empty();
+                if(length<10){
+                    for(var i=0;i<length;i++){
+                        $('.p1').append('<span style="--i:'+i+'">'+ input01[i]+'</span>')
+                    }
+                }
+                else{
+                    for(var i=0;i<parseInt(length/2);i++){
+                        $('.p1').append('<span style="--i:'+i+'">'+ input01[i]+'</span>')
+                };
+                    
+                    for(var i=parseInt(length/2);i<length;i++){
+                        $('.p2').append('<span style="--i:'+i+'">'+ input01[i]+'</span>')
+                    }
+                }
+                // 字体也改变
+                var font = document.getElementById('input02').value;
+                $('.p1').children('span').css('font-family',font)
+                $('.p2').children('span').css('font-family',font)
+            }
+
+        // 04改变字体
+        var btn04 = document.getElementById('btn04');
+        btn04.onclick = function(){
+            var font = document.getElementById('input02').value;
+            $('.p1').children('span').css('font-family',font)
+            $('.p2').children('span').css('font-family',font)
+        }
+    }
+    </script> -->
     <script src="./jQuery-3.6.0.min.js"></script>
     <script src="./index.js"></script>
 </body>
